@@ -1,0 +1,37 @@
+<h1>Recipr</h1>
+
+<%= link_to 'Add Recipe', new_recipe_path %>
+
+<table>
+    <tr>
+        <td>Recipe</td>
+        <td>Date</td>
+        <td>Kind</td>
+        <td>Price</td>
+        <td>Content</td>
+    </tr>
+
+    <% @recipe.each do |recipe| %>
+    <tr>
+        <td>
+            <%= link_to recipe.name, edit_recipe_path(recipe) %>
+        </td>
+        <td>
+            <%= recipe.date %>
+        </td>
+        <td>
+            <%= recipe.kind %>
+        </td>
+        <td>
+            <%= recipe.price %>
+        </td>
+        <td>
+            <%= recipe.content %>
+        </td>
+
+        <td>
+            <%= link_to 'Delete' , recipe_path(recipe), method: 'delete' %>
+        </td>
+    </tr>
+    <% end %>
+</table>

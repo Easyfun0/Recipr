@@ -1,0 +1,42 @@
+<h1>Add Recipe</h1>
+
+<% if @recipe.errors.any? %>
+    <h2>
+        <% @recipe.errors.full_messages.each do |message| %>
+        <li>
+            <%= message %>
+        </li>
+        <% end %>
+    </h2>
+<% end %>
+
+<%= form_with(model: Recipe.new) do |form| %>
+
+<div>
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name %>
+</div>
+
+<div>
+    <%= form.label :date, 'Date' %>
+    <%= form.date_field :date, data: {controller: "flatpickr"} %>
+</div>
+
+<div>
+    <%= form.label :kind, 'Kind' %>
+    <%= form.text_field :kind %>
+</div>
+
+<div>
+    <%= form.label :price, 'Price' %>
+    <%= form.text_field :price %>
+</div>
+
+<div>
+    <%= form.label :content, 'Content' %>
+    <%= form.text_field :content %>
+</div>
+
+<%= form.submit 'Add' %>
+
+<% end %>

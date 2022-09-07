@@ -1,0 +1,32 @@
+<h1>Edit Recipe</h1>
+
+<%= form_with(model: @recipe) do |form| %>
+
+<div>
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name %>
+</div>
+
+<div>
+    <%= form.label :date, 'Date' %>
+    <%= form.date_field :date %>
+</div>
+
+<div>
+    <%= form.label :kind, 'Kind' %>
+    <%= form.text_field :kind %>
+</div>
+
+<div>
+    <%= form.label :price, 'Price' %>
+    <%= form.text_field :price %>
+</div>
+
+<div>
+    <%= form.label :content, 'Content' %>
+    <%= form.text_field :content %>
+</div>
+
+<%= form.submit 'Edit' %>
+
+<% end %>
